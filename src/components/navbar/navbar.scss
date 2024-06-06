@@ -1,3 +1,5 @@
+@import '../../responsive.scss';
+
 nav {
     height: 100px;
     display: flex;
@@ -9,6 +11,10 @@ nav {
 
         &:hover {
             scale: 1.05;
+        }
+
+        @include sm {
+            display: none;
         }
     }
 
@@ -27,6 +33,16 @@ nav {
 
             img {
                 width: 28px;
+            }
+
+            span {
+                @include md {
+                    display: none;
+                }
+
+                @include sm {
+                    display: initial;
+                }
             }
         }
     }
