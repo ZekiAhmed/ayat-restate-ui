@@ -1,10 +1,16 @@
 import Navbar from './components/navbar/Navbar'
 import './layout.scss'
+import HomeePage from './routes/homePage/HomeePage'
 
-function App() {
+const App = () => {
   return (
     <div className="layout">
-      <Navbar />
+      <div className="navba">
+        <Navbar />
+      </div>
+      <div className="content">
+        <HomeePage />
+      </div>
     </div>
   )
 }
