@@ -1,36 +1,35 @@
-import HomeePage from './routes/homePage/HomeePage'
-import {
-  createBrowserRouter,
-  RouterProvider
-} from 'react-router-dom'
-import ListePage from './routes/listPage/ListePage'
-import Layout from './routes/layout/Layout'
-import SinglePage from './routes/singlePage/SinglePage'
+import HomeePage from "./routes/homePage/HomeePage";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ListePage from "./routes/listPage/ListePage";
+import Layout from "./routes/layout/Layout";
+import SinglePage from "./routes/singlePage/SinglePage";
+import ProfilePage from "./routes/profilePage/ProfilePage";
 
 const App = () => {
-
   const router = createBrowserRouter([
     {
       path: "/",
-      element: (
-        <Layout />
-      ),
+      element: <Layout />,
       children: [
         {
           path: "/",
-          element: <HomeePage />
+          element: <HomeePage />,
         },
         {
           path: "/list",
-          element: <ListePage />
+          element: <ListePage />,
         },
         {
           path: "/:id",
-          element: <SinglePage />
-        }
-      ]
-    }
-  ])
+          element: <SinglePage />,
+        },
+        {
+          path: "/profile",
+          element: <ProfilePage />,
+        },
+      ],
+    },
+  ]);
 
   return (
     // <div className="layout">
@@ -41,8 +40,8 @@ const App = () => {
     //     <HomeePage />
     //   </div>
     // </div>
-    <RouterProvider router={router}/>
-  )
-}
+    <RouterProvider router={router} />
+  );
+};
 
-export default App
+export default App;
