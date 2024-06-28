@@ -1,2 +1,16 @@
 .profilePage {
+  display: flex;
+  height: 100%;
+
+  .details {
+    flex: 3;
+  }
+  .chatContainer {
+    flex: 2;
+    background-color: #fcf5f3;
+    height: 100%;
+
+    .wrapper {
+    }
+  }
 }
