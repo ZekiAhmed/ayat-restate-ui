@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom';
-import './card.scss';
+import { Link } from "react-router-dom";
+import "./card.scss";
 
-const Card = ({item}) => {
+const Card = ({ item }) => {
   return (
-    <div className='card'>
+    <div className="card">
       <Link to={`/${item.id}`} className="imageContainer">
         <img src={item.img} alt="" />
       </Link>
@@ -38,7 +38,7 @@ const Card = ({item}) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

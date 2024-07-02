@@ -1,3 +1,4 @@
+import "./list.scss";
 import React from "react";
 import { listData } from "../../lib/dummydata";
 import Card from "../card/Card";
