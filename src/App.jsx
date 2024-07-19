@@ -27,6 +27,10 @@ const App = () => {
           path: "/profile",
           element: <ProfilePage />,
         },
+        {
+          path: "/register",
+          element: <Register />,
+        },
       ],
     },
   ]);
