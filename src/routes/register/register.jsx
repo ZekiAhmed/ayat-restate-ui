@@ -1,10 +1,13 @@
 import "./register.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 
 function Register() {
   const [error, setError] = useState("");
+
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -20,10 +23,11 @@ function Register() {
         email,
         password,
       });
-      console.log(res.data);
+      // console.log(res.data);
+      navigate("/login");
     } catch (err) {
-      console.log(err);
-      // setError()
+      // console.log(err);
+      setError(err.response.data.message);
     }
   };
   return (
@@ -35,6 +39,7 @@ function Register() {
           <input name="email" type="text" placeholder="Email" />
           <input name="password" type="password" placeholder="Password" />
           <button>Register</button>
+          {error && <span>{error}</span>}
           <Link to="/login">Do you have an account?</Link>
         </form>
       </div>
