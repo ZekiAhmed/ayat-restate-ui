@@ -1,6 +1,6 @@
 import "./login.scss";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { json, Link, useNavigate } from "react-router-dom";
 import apiRequest from "../../lib/apiRequest";
 
 const Login = () => {
@@ -24,8 +24,9 @@ const Login = () => {
         username,
         password,
       });
-      console.log(res);
-      // navigate("/login");
+      // console.log(res);
+      localStorage.setItem("user", JSON.stringify(res.data));
+      navigate("/");
     } catch (err) {
       // console.log(err);
       setError(err.response.data.message);
